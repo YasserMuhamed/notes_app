@@ -31,10 +31,13 @@ class NotesItem extends StatelessWidget {
                     color: Colors.black.withOpacity(.5), fontSize: 18),
               ),
             ),
-            trailing: const Icon(
-              FontAwesomeIcons.trash,
+            trailing: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                FontAwesomeIcons.trash,
+                size: 24,
+              ),
               color: Colors.black,
-              size: 24,
             ),
           ),
           Padding(
