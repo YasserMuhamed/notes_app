@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/widgets/appbar/icon_box.dart';
+import 'package:notes_app/widgets/icon_box.dart';
 
 class NotesViewAppbar extends StatelessWidget {
   const NotesViewAppbar({super.key});
