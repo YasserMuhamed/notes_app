@@ -24,11 +24,11 @@ class NotesItem extends StatelessWidget {
                   fontWeight: FontWeight.w500),
             ),
             subtitle: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16),
+              padding: const EdgeInsets.symmetric(vertical: 14),
               child: Text(
                 "build your career with yourself",
                 style: TextStyle(
-                    color: Colors.black.withOpacity(.5), fontSize: 18),
+                    color: Colors.black.withOpacity(.5), fontSize: 17),
               ),
             ),
             trailing: const Icon(

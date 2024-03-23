@@ -11,7 +11,20 @@ class NotesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(brightness: Brightness.dark, fontFamily: "Poppins"),
+      theme: ThemeData(
+        fontFamily: "Poppins",
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Color.fromARGB(255, 69, 80, 94),
+          brightness: Brightness.dark,
+        ).copyWith(
+          primaryContainer: Colors.grey.shade800,
+          onPrimaryContainer: Colors.white,
+          secondaryContainer: const Color(0xff03dac6),
+          onSecondaryContainer: Colors.black,
+          error: Colors.red,
+          onError: Colors.black,
+        ),
+      ),
       home: const NotesView(),
     );
   }
