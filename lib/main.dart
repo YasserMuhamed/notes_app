@@ -14,7 +14,7 @@ class NotesApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: "Poppins",
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Color.fromARGB(255, 69, 80, 94),
+          seedColor: const Color.fromARGB(255, 69, 80, 94),
           brightness: Brightness.dark,
         ).copyWith(
           primaryContainer: Colors.grey.shade800,

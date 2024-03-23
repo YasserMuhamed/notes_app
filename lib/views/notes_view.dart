@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:notes_app/widgets/notes_view_appbar.dart';
+import 'package:notes_app/widgets/note_bottom_sheet.dart';
 import 'package:notes_app/widgets/notes_view_body.dart';
 
 class NotesView extends StatelessWidget {
@@ -9,12 +9,17 @@ class NotesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const NotesViewAppbar(),
-      ),
       body: const NotesViewBody(),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+              backgroundColor: Colors.grey.shade900,
+              barrierColor: Colors.black.withOpacity(.4),
+              context: context,
+              builder: (context) {
+                return const NoteBottomSheet();
+              });
+        },
         child: const Icon(FontAwesomeIcons.plus),
       ),
     );

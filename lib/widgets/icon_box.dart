@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class IconBox extends StatelessWidget {
-  const IconBox({super.key});
+  const IconBox({super.key, required this.iconData});
+
+  final IconButton iconData;
 
   @override
   Widget build(BuildContext context) {
@@ -11,8 +13,8 @@ class IconBox extends StatelessWidget {
           borderRadius: BorderRadius.circular(16)),
       width: 46,
       height: 46,
-      child: const Center(
-        child: Icon(Icons.search),
+      child: Center(
+        child: iconData,
       ),
     );
   }

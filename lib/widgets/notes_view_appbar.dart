@@ -1,23 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/widgets/icon_box.dart';
 
-class NotesViewAppbar extends StatelessWidget {
-  const NotesViewAppbar({super.key});
+class CustomAppbar extends StatelessWidget {
+  const CustomAppbar({
+    super.key,
+    required this.title,
+    required this.iconData,
+    required this.onTapIcon,
+  });
+  final String title;
+  final IconData iconData;
+  final VoidCallback onTapIcon;
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            "Notes",
-            style: TextStyle(fontSize: 24),
-          ),
-          IconBox()
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          title,
+          style: const TextStyle(fontSize: 24),
+        ),
+        IconBox(
+          iconData: IconButton(onPressed: onTapIcon, icon: Icon(iconData)),
+        )
+      ],
     );
   }
 }
