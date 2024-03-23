@@ -14,23 +14,26 @@ class CustomTextFormField extends StatelessWidget {
       this.key_type,
       this.fillColor,
       this.maxLines = 1,
-      this.textPadding});
+      this.textPadding,
+      this.onSaved});
   bool? obscure;
   Icon? preicon;
   IconButton? suficon;
   String? txtlabel;
   Function(String)? onChange;
-  FormFieldValidator? validate;
+  String? Function(String?)? validate;
   TextInputType? key_type;
   final int maxLines;
   Color? fillColor;
   EdgeInsetsGeometry? textPadding;
+  void Function(String?)? onSaved;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: textPadding ?? const EdgeInsets.all(0),
       child: TextFormField(
+        onSaved: onSaved,
         cursorColor: Colors.white,
         maxLines: maxLines,
         keyboardType: key_type ?? TextInputType.name,
