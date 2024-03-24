@@ -21,7 +21,7 @@ class NotesViewBody extends StatelessWidget {
             iconData: Icons.search,
             onTapIcon: () {},
           ),
-          const Expanded(child: ItemListView())
+          const Expanded(child: ItemListBuilder())
         ],
       ),
     );
