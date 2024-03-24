@@ -66,20 +66,25 @@ class _FormSheetCardState extends State<FormSheetCard> {
           const SizedBox(
             height: 32,
           ),
-          CustomButton(
-            ontap: () {
-              if (key.currentState!.validate()) {
-                key.currentState!.save();
-                NoteModel noteModel = NoteModel(
-                    title: title!,
-                    subTitle: subTitle!,
-                    date: DateTime.now().toString(),
-                    color: Colors.blue.value);
-                BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
-              } else {
-                autovalidateMode = AutovalidateMode.always;
-                setState(() {});
-              }
+          BlocBuilder<AddNoteCubit, AddNoteState>(
+            builder: (context, state) {
+              return CustomButton(
+                isLoading: state is AddNoteLoading ? true : false,
+                ontap: () {
+                  if (key.currentState!.validate()) {
+                    key.currentState!.save();
+                    NoteModel noteModel = NoteModel(
+                        title: title!,
+                        subTitle: subTitle!,
+                        date: DateTime.now().toString(),
+                        color: Colors.blue.value);
+                    BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
+                  } else {
+                    autovalidateMode = AutovalidateMode.always;
+                    setState(() {});
+                  }
+                },
+              );
             },
           )
         ]),
