@@ -36,7 +36,7 @@ class NotesItem extends StatelessWidget {
               title: Text(
                 note.title,
                 style: const TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                     fontSize: 26,
                     fontWeight: FontWeight.w500),
               ),
@@ -45,7 +45,7 @@ class NotesItem extends StatelessWidget {
                 child: Text(
                   note.subTitle,
                   style: TextStyle(
-                      color: Colors.black.withOpacity(.5), fontSize: 17),
+                      color: Colors.white.withOpacity(.5), fontSize: 17),
                 ),
               ),
               trailing: IconButton(
@@ -55,7 +55,7 @@ class NotesItem extends StatelessWidget {
                 },
                 icon: const Icon(
                   FontAwesomeIcons.trash,
-                  color: Colors.black,
+                  color: Colors.white,
                   size: 24,
                 ),
               ),
@@ -64,7 +64,7 @@ class NotesItem extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Text(
                 note.date,
-                style: TextStyle(color: Colors.black.withOpacity(.5)),
+                style: TextStyle(color: Colors.white.withOpacity(.5)),
               ),
             )
           ],

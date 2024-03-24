@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
+import 'package:notes_app/widgets/color_list_builder_edit.dart';
 import 'package:notes_app/widgets/custom_text_form_field.dart';
 import 'package:notes_app/widgets/notes_view_appbar.dart';
 
@@ -48,6 +49,9 @@ class _EditNoteBodyState extends State<EditNoteBody> {
             },
             maxLines: 5,
             txtlabel: "Content",
+          ),
+          ColorListViewEdit(
+            note: widget.note,
           )
         ],
       ),
